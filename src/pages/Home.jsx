@@ -18,8 +18,7 @@ export default function Home() {
       .then(data => {
         let filtered = [...data];
   
-        // 🟦 Category Filter
-        const categories = (searchParams.get("category") || "")
+           const categories = (searchParams.get("category") || "")
           .split(",")
           .filter(Boolean);
   
@@ -27,7 +26,7 @@ export default function Home() {
           filtered = filtered.filter(p => categories.includes(p.category));
         }
   
-        // 🟩 Sort Filter
+       
         const sort = searchParams.get("sort");
         if (sort === "price_asc") {
           filtered.sort((a, b) => a.price - b.price);
